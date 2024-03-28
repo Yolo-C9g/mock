@@ -2,32 +2,30 @@ package com.example.mock;
 
 import com.example.mock.controller.ItemController;
 import com.example.mock.domain.Item;
-import com.example.mock.service.ItemBusinessService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
 /**
  * @author WYC
  * @version v1.0
- * @since 2024/3/28 14:00
+ * @since 2024/3/28 16:40
  **/
-@RunWith(MockitoJUnitRunner.class)
-public class ItemTest {
+@Slf4j
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class Item2Test {
 
-    @InjectMocks
+    @Resource
     private ItemController itemController;
-
-    @Mock
-    private ItemBusinessService businessService;
 
     @Test
     public void dummyItem_basic() {
@@ -41,7 +39,6 @@ public class ItemTest {
 
     @Test
     public void itemFromBusinessService_basic() {
-        when(businessService.retreiveHardcodedItem()).thenReturn(new Item(21, "Ball1", 5, 20));
         // 测试方法
         Item item = itemController.itemFromBusinessService();
         // 预期结果
@@ -53,10 +50,6 @@ public class ItemTest {
     @Test
     public void retrieveAllItems_basic() {
         // 测试方法
-        when(businessService.retrieveAllItems()).thenReturn(Arrays.asList(
-                new Item(1, "Ball", 5, 20),
-                new Item(2, "Ball1", 51, 201)
-        ));
         List<Item> items = itemController.retrieveAllItems();
         // 预期结果
         List<Item> expectedItems = Arrays.asList(
