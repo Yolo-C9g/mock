@@ -1,7 +1,7 @@
-package com.ada.enduser.controller;
+package com.example.mock.controller;
 
-import com.ada.enduser.common.dto.Item;
-import com.ada.enduser.service.ItemBusinessService;
+import com.example.mock.domain.Item;
+import com.example.mock.service.ItemBusinessService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

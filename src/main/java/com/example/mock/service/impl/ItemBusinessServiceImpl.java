@@ -1,9 +1,8 @@
-package com.ada.enduser.service.impl;
+package com.example.mock.service.impl;
 
-import com.ada.enduser.common.dto.Item;
-import com.ada.enduser.service.ItemBusinessService;
+import com.example.mock.domain.Item;
+import com.example.mock.service.ItemBusinessService;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;

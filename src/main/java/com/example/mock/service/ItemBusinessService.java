@@ -1,6 +1,7 @@
-package com.ada.enduser.service;
+package com.example.mock.service;
 
-import com.ada.enduser.common.dto.Item;
+
+import com.example.mock.domain.Item;
 
 import java.util.List;
 

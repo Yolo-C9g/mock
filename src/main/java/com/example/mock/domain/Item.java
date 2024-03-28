@@ -1,4 +1,4 @@
-package com.ada.enduser.common.dto;
+package com.example.mock.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,10 +13,6 @@ import lombok.Data;
 public class Item {
     private Integer id;
     private String name;
-    private Integer ids;
-    private Integer idss;
-
-
-
-
+    private Integer productNumber;
+    private Integer productPrice;
 }
